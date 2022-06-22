@@ -1,3 +1,20 @@
 .quantidade {
     border-radius: 4px 4px 4px 4px;
 }
+
+.footer {
+	text-align: center;
+    background: #232F3E;
+	padding: 40px 0;
+}
+
+.imagem_footer{
+    width: 120px;
+    height: 120px;
+}
+
+.copyright {
+	color: #FFFFFF;
+	font-size: 13px;
+	margin: 20px 0 0;
+}

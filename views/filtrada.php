@@ -11,14 +11,23 @@
 </head>
 <body>
     
-<nav class="navbar" style="background-color:#232F3E"> 
+    <nav class="navbar" style="background-color:#232F3E"> 
         <div class="container">
-          <a class="navbar-brand text-white" href="#">
+          <a class="navbar-brand text-white" href="../index.html">
             <img src="../img/amazon-icon-c.png" alt="" width="60" height="50" class="d-inline-block align-text-top"> 
             <h2 class="d-inline-block align-text-top">Amazon</h2>
           </a>
         </div>
     </nav>
+    <div class="container pb-5 pt-5">     
+        <section>
+            <form action="../index.html" method="post" class="d-flex" role="search">
+                <input required name='filtro'class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </section>
+    </div>
+    
 </body>
 </html>
 
@@ -137,7 +146,8 @@ $achou = true;
 }
 
 if (str_contains(strtolower("Echo Show 5"),strtolower($filtro))) {
-    $code_html = $code_html . "<div class='card' style='width: 18rem;'>
+    $code_html = $code_html . "<div class='col-4 pb-3'>
+    <div class='card' style='width: 18rem;'>
     <img src='https://m.media-amazon.com/images/I/61lIhZlkROL._AC_SY355_.jpg' class='card-img-top' alt='...'>
     <div class='card-body'>
       <h5 class='card-title'>Echo Studio</h5>
