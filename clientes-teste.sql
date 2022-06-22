@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Jun-2022 às 22:29
+-- Tempo de geração: 22-Jun-2022 às 04:28
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -39,34 +39,8 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `nome`, `valor`, `quantidade`) VALUES
-(5, 'Fire TV Stick', 236.55, 8);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cliente`
---
-
-CREATE TABLE `cliente` (
-  `id` int(11) NOT NULL,
-  `login` varchar(50) NOT NULL,
-  `senha` varchar(16) NOT NULL,
-  `email` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `cliente`
---
-
-INSERT INTO `cliente` (`id`, `login`, `senha`, `email`) VALUES
-(1, '[value-2]', '[value-3]', '[value-4]'),
-(2, 'nrd', '123', 'marcosaureliomendesoliveira@gmail.com'),
-(3, 'aurelio', '1234', 'marcosaureliomendesoliveira@gmail.com'),
-(4, 'mendes', '123', 'marcosaureliomendesoliveira@gmail.com'),
-(5, 'nrd', 'qw', 'marcosaureliomendesoliveira@gmail.com'),
-(6, 'Marcos Aurelio', 'teste@123', 'marcos.aurelio@3eengenharia.com.br'),
-(7, 'renan', '123', 'renan.lima@3esolucoes.com.br'),
-(8, 'teste', '1234', 'teste@gmail.com');
+(11, 'Echo Dot (4ª Geração)', 359, 3),
+(12, 'Fire TV Stick', 236.55, 6);
 
 --
 -- Índices para tabelas despejadas
@@ -79,12 +53,6 @@ ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -92,13 +60,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
