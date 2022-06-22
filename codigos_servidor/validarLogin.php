@@ -13,7 +13,7 @@ if ($quantidade > 0) {
 
 }else {
     echo "<script>alert('Login mal sucedido, favor tente novamente');</script>";
-    $url = '../index.html';  
+    $url = '../views/tela_cadastro.html';  
     echo("<script>history.replaceState({},'','$url');</script>");
     include $url;
 }

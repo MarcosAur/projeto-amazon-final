@@ -9,7 +9,7 @@ const mysqli = new mysqli(host, usuario_banco, senha_banco, database);
 
 function adicionarUsuario($nome, $senha_user, $email){
     $sql_code = "INSERT INTO `cliente`(`login`, `senha`, `email`) VALUES ('$nome', '$senha_user', '$email')";
-    $sql_query = con->query($sql_code);
+    $sql_query = mysqli->query($sql_code);
 }
 
 function verificarExistenciaUsuario($login, $email_user){
