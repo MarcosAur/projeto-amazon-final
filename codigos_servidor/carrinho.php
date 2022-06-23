@@ -23,8 +23,8 @@
 
 
 <?php
-if (isset(($_SESSION))){
-    $usuario = $_SESSION['nome_usuario'];
+if (isset(($_COOKIE['user_name']))){
+    $usuario = $_COOKIE['user_name'];
     echo "<label>$usuario</label>";
 }
 
@@ -52,7 +52,7 @@ Criação das linhas da tabela com produtos do carrinho.
 */
 
 $codigo_tbody = "<tbody>";
-$teste_produtos = resgatarProdutos();
+$produtos = resgatarProdutos();
 
 $codigo_trow = "";
 
@@ -60,7 +60,7 @@ $valor_total_compra = 0;
 
 
 
-foreach ($teste_produtos as $produto) {
+foreach ($produtos as $produto) {
     $value_post = $produto[1];
     $contador = 0;
     $codigo_trow = $codigo_trow . "<form action='./excluirDoCarrinho.php' method='post'>
@@ -85,14 +85,27 @@ $codigo_tfooter = "<tfooter><tr><td colspan = '6' align='center' >Valor Total: R
 
 
 echo $codigo_thead . $codigo_tbody . $codigo_tfooter;
+
+
+if (count($produtos) == 0) {
+    echo "<div>
+    <script>function carrinhoVazio(){
+        alert('Carinho vazio. Adicione itens para comprar.');
+    }
+        </script>
+            <center>
+            <a href='../index.html'><button onclick='carrinhoVazio()' class='btn btn-primary'>Finalizar Compra</button></a>
+            </center>
+        </div>";
+}else{
+    echo "<div>
+            <center>
+            <a href='./efetuarCompra.php'><button class='btn btn-primary'>Finalizar Compra</button></a>
+            </center>
+        </div>";
+}
+
 ?>
-
-<div>
-    <center>
-    <a href="./autenticarUser.php"><button class="btn btn-primary">Finalizar Compra</button></a>
-    </center>
-</div>
-
 
 
 </html>

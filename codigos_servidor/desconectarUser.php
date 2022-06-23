@@ -1,9 +1,9 @@
 <?php
-if (isset($_SESSION)) {
-    session_unset();
+if (isset($_COOKIE['user_name'])) {
+        setcookie('user_name', "", time() - 3600, "/");
+        $url = '../index.html';  
+    echo("<script>history.replaceState({},'','$url');</script>");
+    include $url;
 }
-echo "<script>alert('Login mal sucedido, favor tente novamente');</script>";
-$url = '../index.html';  
-echo("<script>history.replaceState({},'','$url');</script>");
-include $url;
+
 ?>

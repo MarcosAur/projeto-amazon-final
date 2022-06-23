@@ -57,4 +57,9 @@ function excluirDoCarrinho($nome){
     $sql_query = mysqli->query($sql_code);
 }
 
+function excluirTudoDoCarrinho(){
+    $sql_code = "DELETE FROM `carrinho`";
+    $sql_query = mysqli->query($sql_code);
+}
+
 ?>

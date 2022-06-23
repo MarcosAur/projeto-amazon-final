@@ -4,8 +4,9 @@ include_once ('conexao.php');
 $quantidade = validarLogin($_POST['login'],$_POST['senha']);
 
 if ($quantidade > 0) {
-    session_start();
-    $_SESSION['nome_usuario'] = $_POST['login'];
+    $cookie_name = 'user_name';
+    $cookie_value = $_POST['login'];
+    setcookie($cookie_name, $cookie_value, time() + 86400, "/"); 
     $url = '../index.html';  
     echo("<script>history.replaceState({},'','$url');</script>");
     include $url;
