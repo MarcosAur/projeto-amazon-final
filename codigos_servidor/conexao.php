@@ -19,6 +19,14 @@ function verificarExistenciaUsuario($login, $email_user){
     return $quantidade;
 }
 
+function coletarEmail($login){
+    $sql_code = "SELECT * FROM `cliente` WHERE login = '$login'";
+    $sql_query = mysqli->query($sql_code);
+    $dados = $sql_query->fetch_assoc();
+    return $dados['email'];
+}
+
+
 function validarLogin($login, $senha){
     $sql_code = "SELECT * FROM `cliente` WHERE senha = '$senha' AND login = '$login'";
     $sql_query = mysqli->query($sql_code);

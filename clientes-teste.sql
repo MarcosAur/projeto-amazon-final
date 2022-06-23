@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Jun-2022 às 04:28
+-- Tempo de geração: 23-Jun-2022 às 19:22
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -34,13 +34,35 @@ CREATE TABLE `carrinho` (
   `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `carrinho`
+-- Estrutura da tabela `cliente`
 --
 
-INSERT INTO `carrinho` (`id`, `nome`, `valor`, `quantidade`) VALUES
-(11, 'Echo Dot (4ª Geração)', 359, 3),
-(12, 'Fire TV Stick', 236.55, 6);
+CREATE TABLE `cliente` (
+  `id` int(11) NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `senha` varchar(16) NOT NULL,
+  `email` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `login`, `senha`, `email`) VALUES
+(1, '[value-2]', '[value-3]', '[value-4]'),
+(2, 'nrd', '123', 'marcosaureliomendesoliveira@gmail.com'),
+(3, 'aurelio', '1234', 'marcosaureliomendesoliveira@gmail.com'),
+(4, 'mendes', '123', 'marcosaureliomendesoliveira@gmail.com'),
+(5, 'nrd', 'qw', 'marcosaureliomendesoliveira@gmail.com'),
+(6, 'Marcos Aurelio', 'teste@123', 'marcos.aurelio@3eengenharia.com.br'),
+(7, 'renan', '123', 'renan.lima@3esolucoes.com.br'),
+(8, 'teste', '1234', 'teste@gmail.com'),
+(9, 'kkteus', '1234', 'kk5kkteuskk@gmail.com'),
+(10, 'Teste_cookie', '1234', 'marcosaureliomendesolivaseira@gmail.com'),
+(11, 'teste3', '1234', 'estagiarios@3eengenharia.com');
 
 --
 -- Índices para tabelas despejadas
@@ -53,6 +75,12 @@ ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -60,7 +88,13 @@ ALTER TABLE `carrinho`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de tabela `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
